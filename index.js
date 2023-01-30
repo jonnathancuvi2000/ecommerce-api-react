@@ -30,6 +30,9 @@ app.use("/api/products",productRoute);
 app.use("/api/carts",cartRoute);
 app.use("/api/orders",orderRoute);
 app.use("/api/checkout",stripeRoute);
+app.use("/", (req,res) => {
+    res.send('Bienvenido al server para ecommerce app')
+});
 
 app.listen(process.env.PORT || 4000,()=>{
     console.log("Back-End running on "+ process.env.PORT )
